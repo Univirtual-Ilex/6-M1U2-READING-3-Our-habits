@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 import Ilex from '../../App/variables'
 const styles = css`
 position: absolute;
-z-index:500;
+z-index:5000;
 top: 0;
 left: 0;
 right:0;

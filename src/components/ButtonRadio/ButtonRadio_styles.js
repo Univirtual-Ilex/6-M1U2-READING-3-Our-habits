@@ -62,16 +62,27 @@ position: relative;
   .true,.false,.n-m{
     color:#fff;
     font-weight:bolder;
+    font-family: sans-serif;
+    font-size:12px;
   }
 
   .true{
     background-color: ${Ilex.verde};
+    &:hover{
+      background: #00BC99;
+    }
   }
   .false{
     background-color: ${Ilex.color_rojo};
+    &:hover{
+      background: #AC3350;
+    }
   }
   .n-m{
     background-color: ${Ilex.violeta2};
+    &:hover{
+      background: #6d35ad;
+    }
   }
 }
 

@@ -5,11 +5,6 @@ const styles = css`
         color:${Ilex.textos};
         font-family: ${Ilex.font};
     }
-    .btn-true{
-        &:hover{
-            background: #00BC99;
-        }
-    }
 `
 export const UiButtonsContainer = styled.div`
     width:6.5em;

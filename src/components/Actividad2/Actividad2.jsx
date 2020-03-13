@@ -81,9 +81,9 @@ const [modalFlag, setModal] = useState(false)
                         <p> <strong> {i + 11}. </strong> {data.text} </p>
                     </ICol>
                     <IRow w={44.5} gutters={0.2}>
-                        <ButtonRadio className="btn-true" setCheckedState={setChecked} arrId={(i + 10)} buttonId={0} nameb={'radio_button' + (i + 10)} text={'TRUE'} />
-                        <ButtonRadio className="btn-false" setCheckedState={setChecked} arrId={(i + 10)} buttonId={1} nameb={'radio_button' + (i + 10)} text={'FALSE'} />
-                        <ButtonRadio className="btn-nm" setCheckedState={setChecked} arrId={(i + 10)} buttonId={2} nameb={'radio_button' + (i + 10)} text={'N/M'} />
+                        <ButtonRadio  setCheckedState={setChecked} arrId={(i + 10)} buttonId={0} nameb={'radio_button' + (i + 10)} text={'TRUE'} />
+                        <ButtonRadio  setCheckedState={setChecked} arrId={(i + 10)} buttonId={1} nameb={'radio_button' + (i + 10)} text={'FALSE'} />
+                        <ButtonRadio  setCheckedState={setChecked} arrId={(i + 10)} buttonId={2} nameb={'radio_button' + (i + 10)} text={'N/M'} />
                     </IRow>
             </IRow>
             )
@@ -93,8 +93,8 @@ const [modalFlag, setModal] = useState(false)
         <Container bgImage='./src/bg_actividad1.png' {...props} id="area" h={40} w={72}>
             
             <UiButtonsContainer>
-                <ButtonUi icon='ilx-ayuda' tooltip='click on the buttons to listen and read the activities, associate them with the texts below.' />
-                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={ () => {window.location.href = '/actividad1'} } />
+                <ButtonUi icon='ilx-ayuda' tooltip='After reading the information, answer if the following sentences are true or false' />
+                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={ () => {window.location.href = '/actividad2'} } />
             </UiButtonsContainer>
             
           
@@ -111,7 +111,7 @@ const [modalFlag, setModal] = useState(false)
                     {list2}
                  </ICol>
             </IRow>
-            <IRow pt={4.3} >
+            <IRow pt={2.4} >
                 <ICol  onClick={checkActivity} ><ButtonCheck /></ICol>
             </IRow>
             <PreguntaTF visibility={modalFlag}  answers={Data} passed={passed} repeatUrl={'/actividad2'} finished={passed} />

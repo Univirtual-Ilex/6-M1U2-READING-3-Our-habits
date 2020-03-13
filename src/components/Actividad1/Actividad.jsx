@@ -18,10 +18,12 @@ import img from './Actividad_img'
 import DraggableItem from '../Draggable'
 
 import Modal from '../Generales/Modal'
-
+import Tooltip from '../Tooltip'
 const Actividad_base =  ({staticContext,...props}) => {
 
-
+    const [visible, setvisible] = useState(false)
+    const [tooltipTitle, settooltipTitle] = useState()
+    const [tooltipText, settooltipText] =  useState()
     const [modalFlag, setModal] = useState(false)
     const [ok, setOk] = useState(false)
     const [err, setErr] = useState(false)
@@ -32,7 +34,9 @@ const Actividad_base =  ({staticContext,...props}) => {
     const area_3 = useRef()
     const area_4 = useRef()
 
-
+    const closetooltip = () => {
+        setvisible(!visible)
+    }
     const setStatusCheck = (id, status, target) => {
         var data = Data[id]
         data.status = status
@@ -89,7 +93,11 @@ const Actividad_base =  ({staticContext,...props}) => {
                             <div key={index} className="img-cont">
                                 <div className="title-div" > {item.name} </div>
                                 <div  className="img"  style={{backgroundImage: `url(${item.img})`}}>
-                                    <div className="read_button"></div>
+                                    <div className="read_button" onClick={()=> {settooltipTitle(item.name)
+                                                                                settooltipText(item.tooltip) 
+                                                                                setvisible(!visible)}}>
+                                        
+                                    </div>
                                 </div> 
                                 <div className="drag" data-selected={''} data-target={'area_' + index }   target={'area_' + index} id={'area_' + index} ref={eval('area_' + index)}></div>
                             </div>             
@@ -133,7 +141,10 @@ const Actividad_base =  ({staticContext,...props}) => {
                 </IRow>
             </IRow>
             
-
+            <Tooltip visible={visible} closebtn={closetooltip} w={30} pos={"30em, 5em"}>
+                <h3>{tooltipTitle}</h3>
+                <p>{tooltipText}</p>
+            </Tooltip>
         </Container>
     )
 
