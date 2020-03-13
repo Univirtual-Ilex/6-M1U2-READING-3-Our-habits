@@ -72,7 +72,7 @@ const Actividad_base =  ({staticContext,...props}) => {
             
             <UiButtonsContainer>
                 <ButtonUi icon='ilx-ayuda' tooltip='Click on the button to see the information of each student and the emails' />
-                <ButtonUi icon='ilx-volver' tooltip='Start Again' />
+                <ButtonUi icon='ilx-volver' tooltip='Start Again'  onClick={ () => {window.location.href = '/actividad1'} }/>
             </UiButtonsContainer>
             <IRow pt={4}>
                 <ICol >
@@ -88,7 +88,9 @@ const Actividad_base =  ({staticContext,...props}) => {
                             return(
                             <div key={index} className="img-cont">
                                 <div className="title-div" > {item.name} </div>
-                                <ButtonAudio  srcImg={item.img} ></ButtonAudio>  
+                                <div  className="img"  style={{backgroundImage: `url(${item.img})`}}>
+                                    <div className="read_button"></div>
+                                </div> 
                                 <div className="drag" data-selected={''} data-target={'area_' + index }   target={'area_' + index} id={'area_' + index} ref={eval('area_' + index)}></div>
                             </div>             
                             ) 
@@ -96,10 +98,13 @@ const Actividad_base =  ({staticContext,...props}) => {
                     </IRow>
                 </ICol>
                 <ICol w={50}>
-                    <IRow justify='center' align='center' w={100} gutters={0.5} className="food">
+                    <IRow justify='center' align='center' w={100} gutters={0.5} className="item">
+                        
                         { Data.map((item, index) => {
                             return(
-                                <DraggableItem 
+                                <div>
+                                    <div className="read_button2"></div>
+                                    <DraggableItem 
                                 elementId={index}
                                 key={index} 
                                 setStatus={setStatusCheck} 
@@ -111,9 +116,11 @@ const Actividad_base =  ({staticContext,...props}) => {
                                 
                                     <div className="container" key={index}>{item.name}</div>  
                                 </DraggableItem>
-                                  
+                                </div>
+                                            
                             ) 
-                        }) }
+                        }) 
+                        }
 
                     </IRow>
 

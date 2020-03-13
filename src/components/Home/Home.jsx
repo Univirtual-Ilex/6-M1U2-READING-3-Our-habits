@@ -14,12 +14,12 @@ const Home_base = function ({ staticContext, ...props}) { // se le pasan las pro
 
                     <div className='bloque-izquierdo'>
                         <div className='bloque-izquierdo-container'>
-                            <h1> Study experiences </h1>
+                            <h1> Our habits </h1>
                             <p>
-                            Read two texts about a woman’s study experiences and then answer
+                            Match the nutritionist's recomendation with the correct description. Then, do the comprehension exercise and choose the most adequate option 
                                 <span className='negrilla'> <br/><br/> Time to practice your reading skill!</span>
                            </p>
-                            <ButtonLink to='/actividad1'>Start</ButtonLink>
+                            <ButtonLink className="start" to='/actividad1'>Start</ButtonLink>
                         </div>
                     </div>
                     <ICol className='bloque-derecho'>

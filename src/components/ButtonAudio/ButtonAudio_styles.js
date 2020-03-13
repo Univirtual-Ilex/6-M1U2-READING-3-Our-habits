@@ -5,7 +5,6 @@ import {margin, padding } from '../Grid/Grid_styles'
 const styles = css`
 img{
     width: 100%;
- 
 }
 `
 export const buttonAudio2 = css`

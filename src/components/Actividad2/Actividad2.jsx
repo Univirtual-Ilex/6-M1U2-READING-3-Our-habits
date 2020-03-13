@@ -11,7 +11,7 @@ import {ICol, IRow} from '../Grid'
 import ButtonRadio from '../ButtonRadio'
 // Styles
 import styled from 'styled-components'
-import styles, { DraggablesContainer, AreasContainer, ProgressbarContainer, UiButtonsContainer } from '../Actividad1/Actividad_styles'
+import styles, { DraggablesContainer, AreasContainer, ProgressbarContainer, UiButtonsContainer } from '../Actividad2/Actividad2_styles'
 // import interaction from './Actividad_interactions'
 import Tooltip from '../Tooltip'
 
@@ -81,9 +81,9 @@ const [modalFlag, setModal] = useState(false)
                         <p> <strong> {i + 11}. </strong> {data.text} </p>
                     </ICol>
                     <IRow w={44.5} gutters={0.2}>
-                        <ButtonRadio setCheckedState={setChecked} arrId={(i + 10)} buttonId={0} nameb={'radio_button' + (i + 10)} text={'TRUE'} />
-                        <ButtonRadio setCheckedState={setChecked} arrId={(i + 10)} buttonId={1} nameb={'radio_button' + (i + 10)} text={'FALSE'} />
-                        <ButtonRadio setCheckedState={setChecked} arrId={(i + 10)} buttonId={2} nameb={'radio_button' + (i + 10)} text={'N/M'} />
+                        <ButtonRadio className="btn-true" setCheckedState={setChecked} arrId={(i + 10)} buttonId={0} nameb={'radio_button' + (i + 10)} text={'TRUE'} />
+                        <ButtonRadio className="btn-false" setCheckedState={setChecked} arrId={(i + 10)} buttonId={1} nameb={'radio_button' + (i + 10)} text={'FALSE'} />
+                        <ButtonRadio className="btn-nm" setCheckedState={setChecked} arrId={(i + 10)} buttonId={2} nameb={'radio_button' + (i + 10)} text={'N/M'} />
                     </IRow>
             </IRow>
             )

@@ -18,11 +18,11 @@ const mistyles = css`
     }
 }
 .container{
-    background: ${Ilex.violeta2};
+    background: ${Ilex.color_rosa_radios};
     color: #FFF;
-    font-family: ${Ilex.font};
+    font-family: sans-serif;
     padding: 0.8em;
-    font-size: 10px;
+    font-size: 14px;
     margin-bottom: 0.8em;
     text-align: center;
     border-radius: 0.4em;
@@ -31,7 +31,7 @@ const mistyles = css`
     box-shadow: 0 0.4em 0 0 rgba(0, 0, 0, 0.2);
 
 }
-.food{
+.item{
     margin-top:10em;
     height: auto;
     display: flex;
@@ -54,9 +54,10 @@ const mistyles = css`
     background-color: #DDD;
 }
 .title-div{
-    background-color: ${Ilex.violeta2};
+    background-color: ${Ilex.color_rosa_radios};
     text-align: center;
     color: white;
+    font-weight: bold;
     border-radius: 0.3em;
     height: 1.8em;
     width: 10.3em;
@@ -79,6 +80,34 @@ const mistyles = css`
     margin-top: 4em;
     margin-left: 68.8em;
 }
+.read_button{
+    background-image: url(./src/read_buttons.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width:40px;
+    height: 34px;
+    margin-left: 7em;
+    &:hover{
+        background-image: url(./src/read_buttons_hover.png);
+    }   
+    
+}
+.read_button2{
+    background-image: url(./src/read_button2.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width:40px;
+    height: 40px;
+    margin-bottom:0.5em;
+    margin-left: 4em;
+   
+    
+}
+.img{
+        width: 165px;
+        min-height: 122px;
+        background-repeat: no-repeat;
+    }
 `
 
 export const DraggablesContainer = styled.div`
