@@ -24,6 +24,9 @@ const Actividad_base =  ({staticContext,...props}) => {
     const [visible, setvisible] = useState(false)
     const [tooltipTitle, settooltipTitle] = useState()
     const [tooltipText, settooltipText] =  useState()
+    const [visible1, setvisible1] = useState(false)
+    const [tooltipTitle1, settooltipTitle1] = useState()
+    const [tooltipText1, settooltipText1] =  useState()
     const [modalFlag, setModal] = useState(false)
     const [ok, setOk] = useState(false)
     const [err, setErr] = useState(false)
@@ -36,6 +39,9 @@ const Actividad_base =  ({staticContext,...props}) => {
 
     const closetooltip = () => {
         setvisible(!visible)
+    }
+    const closetooltip1 = () => {
+        setvisible1(!visible1)
     }
     const setStatusCheck = (id, status, target) => {
         var data = Data[id]
@@ -111,7 +117,9 @@ const Actividad_base =  ({staticContext,...props}) => {
                         { Data.map((item, index) => {
                             return(
                                 <div>
-                                    <div className="read_button2"></div>
+                                    <div className="read_button2" onClick={()=> {settooltipTitle1(item.name)
+                                                                                settooltipText1(item.tooltip) 
+                                                                                setvisible1(!visible)}}></div>
                                     <DraggableItem 
                                 elementId={index}
                                 key={index} 
@@ -141,9 +149,13 @@ const Actividad_base =  ({staticContext,...props}) => {
                 </IRow>
             </IRow>
             
-            <Tooltip visible={visible} closebtn={closetooltip} w={30} pos={"30em, 5em"}>
+            <Tooltip visible={visible} closebtn={closetooltip} w={30} pos={"15em, 15em"}>
                 <h3>{tooltipTitle}</h3>
                 <p>{tooltipText}</p>
+            </Tooltip>
+            <Tooltip visible={visible1} closebtn={closetooltip1} w={30} pos={"70em, 10em"}>
+                <h3>{tooltipTitle1}</h3>
+                <p>{tooltipText1}</p>
             </Tooltip>
         </Container>
     )
