@@ -94,7 +94,7 @@ const [modalFlag, setModal] = useState(false)
             
             <UiButtonsContainer>
                 <ButtonUi icon='ilx-ayuda' tooltip='After reading the information, answer if the following sentences are true or false' />
-                <ButtonUi icon='ilx-volver' tooltip='Start Again' onClick={ () => {window.location.href = '/actividad2'} } />
+                <ButtonUi icon='ilx-volver' tooltip='Start Again'  onClick={ () => {window.location.reload()} } />
             </UiButtonsContainer>
             
           
@@ -114,7 +114,7 @@ const [modalFlag, setModal] = useState(false)
             <IRow pt={2.4} >
                 <ICol  onClick={checkActivity} ><ButtonCheck /></ICol>
             </IRow>
-            <PreguntaTF visibility={modalFlag}  answers={Data} passed={passed} repeatUrl={'/actividad2'} finished={passed} />
+            <PreguntaTF visibility={modalFlag}  answers={Data} passed={passed} repeatUrl={'#/actividad2'} finished={passed} />
         </Container>
     )
 }
