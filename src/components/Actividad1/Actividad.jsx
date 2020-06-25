@@ -81,7 +81,7 @@ const Actividad_base =  ({staticContext,...props}) => {
         <Container bgImage='./src/bg_actividad1.png' id='area' {...props} h={40} w={80} >
             
             <UiButtonsContainer>
-                <ButtonUi icon='ilx-ayuda' tooltip='Click on the button to see the information of each student and the emails' />
+                <ButtonUi icon='ilx-ayuda' tooltip='Match the nutritionist’s recommendation with the correct description' />
                 <ButtonUi icon='ilx-volver' tooltip='Start Again'  onClick={ () => {window.location.reload()} }/>
             </UiButtonsContainer>
             <IRow pt={4}>
